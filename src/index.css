@@ -1,5 +1,6 @@
 body {
   margin: 0;
+  background-color: #D2042D;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -10,4 +11,122 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.container {
+  text-align: center;
+  margin: 1.5rem auto;
+  max-width: 450px;
+}
+
+/* -------- Mode controls ------- */
+
+.mode-controls-form {
+  margin: 0 auto 3rem;
+  padding: .5rem;
+  max-width: 350px;
+  border-radius: 27px;
+  display: flex;
+  justify-content: space-between;
+  gap: 5px;
+  background-color: #8B0000;
+}
+
+.mode-control {
+  padding: .6rem 1rem;
+  border-radius: 19px;
+  color: #FAF9F6;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: .3s ease;
+}
+
+.mode-control input[type="radio"] {
+  display: none;
+}
+
+.mode-control:has(input[type="radio"]:checked) {
+  background-color: #FAF9F6;
+  color: #8B0000;
+}
+
+/* -------- Progress bar ------- */
+
+.progress-bar-container {
+  padding: 1rem;
+  border-radius: 50%;
+  box-shadow: 0px 0px 10px 5px #af0326;
+}
+
+.time {
+  color: #FAF9F6;
+  font-size: 7rem;
+}
+
+/* -------- Bottom buttons ------- */
+
+.control-buttons {
+  position: relative;
+  margin: 1rem auto;
+  width: 100px;
+  height: 40px;
+}
+
+.control-buttons button {
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  text-align: center;
+  padding: 0;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-size: 40px 40px;
+  background-position: center;
+  border: none;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+
+.control-buttons:has(.reset-timer-btn.active) button.control-timer-btn {
+  transform: translateX(-65%);
+}
+
+.control-buttons:has(.reset-timer-btn.active) button.reset-timer-btn.active {
+  transform: translateX(65%);
+}
+
+.control-timer-btn {
+  z-index: 2;
+  transition: transform 2s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.control-timer-btn.start {
+  background-image: url(./assets/play-button-svgrepo-com.svg);
+}
+
+.control-timer-btn.pause {
+  background-image: url(./assets/pause-button-svgrepo-com.svg);
+}
+
+.control-timer-btn img {
+  width: 100%;
+  height: 100%;
+}
+
+.reset-timer-btn {
+  z-index: 1;
+  background-image: url(./assets/reset-button-14438.svg);
+  visibility: hidden;
+  opacity: 0;
+  transition: transform 2s cubic-bezier(0.075, 0.82, 0.165, 1),
+              opacity .4s .2s ease-in-out;
+}
+
+.reset-timer-btn.active {
+  visibility: visible;
+  opacity: 1;
 }
