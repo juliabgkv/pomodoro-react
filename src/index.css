@@ -105,11 +105,11 @@ code {
 }
 
 .control-timer-btn.start {
-  background-image: url(./assets/play-button-svgrepo-com.svg);
+  background-image: url(./assets/icons/play-button-svgrepo-com.svg);
 }
 
 .control-timer-btn.pause {
-  background-image: url(./assets/pause-button-svgrepo-com.svg);
+  background-image: url(./assets/icons/pause-button-svgrepo-com.svg);
 }
 
 .control-timer-btn img {
@@ -119,7 +119,7 @@ code {
 
 .reset-timer-btn {
   z-index: 1;
-  background-image: url(./assets/reset-button-14438.svg);
+  background-image: url(./assets/icons/reset-button-14438.svg);
   visibility: hidden;
   opacity: 0;
   transition: transform 2s cubic-bezier(0.075, 0.82, 0.165, 1),

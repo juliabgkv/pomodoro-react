@@ -2,24 +2,26 @@ import { useEffect, useState } from 'react';
 import { msToTime, timeStringify } from './utils/timeConverter';
 import ModeControls from './components/ModeControls';
 import { CircularProgressbarWithChildren, buildStyles } from 'react-circular-progressbar';
+import sound from './assets/audio/finish.mp3';
 
-const INITIAL_TIMERS = {
-  pomodori: 1500000,
-  shortBreak: 180000,
-  longBreak: 900000
-};
+// const INITIAL_TIMERS = {
+//   pomodori: 1500000,
+//   shortBreak: 180000,
+//   longBreak: 900000
+// };
 
 // for quick test functionality (remove later)
-// const INITIAL_TIMERS = {
-//   pomodori: 3000,
-//   shortBreak: 2000,
-//   longBreak: 1000
-// };
+const INITIAL_TIMERS = {
+  pomodori: 3000,
+  shortBreak: 2000,
+  longBreak: 1000
+};
+
+const audio = new Audio(sound);
 
 function App() {
   const [timers, setTimers] = useState(INITIAL_TIMERS);
   const [mode, setMode] = useState(Object.keys(INITIAL_TIMERS)[0]);
-
   const [currentTimerState, setCurrentTimerState] = useState({
     isActive: false,
     timeLeft: INITIAL_TIMERS[mode]
@@ -36,6 +38,7 @@ function App() {
             };
           });
         } else {
+          audio.play();
           setCurrentTimerState(prevState => {
             return {
               ...prevState,
