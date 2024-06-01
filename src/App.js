@@ -98,14 +98,16 @@ function App() {
                 <div className='time'>{timeStr}</div>
               </>;
   } else if (currentTimerState.timeLeft === 0 && (mode === 'shortBreak' || mode === 'longBreak')) {
-    content = <p>Time to back to work!</p>;
+    content = <p className="message">Time to back to work!</p>;
   } else if (currentTimerState.timeLeft === 0 && mode === 'pomodori') {
-    content = <p>Take a break!</p>
+    content = <p className="message">Take a break!</p>
   }
 
   let resetBtnClasses = 'reset-timer-btn';
-
   if (currentTimerState.timeLeft < timers[mode]) resetBtnClasses += ' active';
+
+  let controlBtnClasses = 'control-timer-btn ' + (currentTimerState.isActive ? 'pause' : 'start');
+  if (currentTimerState.timeLeft !== 0) controlBtnClasses += ' active';
 
   return (
     <div className="container">
@@ -131,14 +133,12 @@ function App() {
         </CircularProgressbarWithChildren>
       </div>
       <div className='control-buttons'>
-        {currentTimerState.timeLeft !== 0 &&
-          <button
-            title={btnTitle}
-            onClick={handleControlTimer}
-            className={'control-timer-btn ' + (currentTimerState.isActive ? 'pause' : 'start')}
-          >
-          </button>
-        }
+        <button
+          title={btnTitle}
+          onClick={handleControlTimer}
+          className={controlBtnClasses}
+        >
+        </button>
         <button
           title='Reset'
           onClick={handleResetTimer}

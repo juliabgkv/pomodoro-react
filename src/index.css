@@ -64,6 +64,12 @@ code {
   font-size: 7rem;
 }
 
+.message {
+  color: #FAF9F6;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
 /* -------- Bottom buttons ------- */
 
 .control-buttons {
@@ -91,17 +97,17 @@ code {
   cursor: pointer;
 }
 
-.control-buttons:has(.reset-timer-btn.active) button.control-timer-btn {
-  transform: translateX(-65%);
-}
-
-.control-buttons:has(.reset-timer-btn.active) button.reset-timer-btn.active {
-  transform: translateX(65%);
-}
+/* Control timer button */
 
 .control-timer-btn {
-  z-index: 2;
+  visibility: hidden;
+  opacity: 0;
   transition: transform 2s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.control-timer-btn.active {
+  visibility: visible;
+  opacity: 1;
 }
 
 .control-timer-btn.start {
@@ -117,8 +123,13 @@ code {
   height: 100%;
 }
 
+.control-buttons:has(.reset-timer-btn.active) .control-timer-btn.active {
+  transform: translateX(-65%);
+}
+
+/* Reset timer button */
+
 .reset-timer-btn {
-  z-index: 1;
   background-image: url(./assets/icons/reset-button-14438.svg);
   visibility: hidden;
   opacity: 0;
@@ -129,4 +140,8 @@ code {
 .reset-timer-btn.active {
   visibility: visible;
   opacity: 1;
+}
+
+.control-buttons:has(.control-timer-btn.active) .reset-timer-btn.active {
+  transform: translateX(65%);
 }
