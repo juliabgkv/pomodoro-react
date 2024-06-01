@@ -5,18 +5,18 @@ import ResetTimerBtn from "./components/buttons/ResetTimerBtn";
 import ControlTimerBtn from "./components/buttons/ControlTimerBtn";
 import Timer from "./components/Timer";
 
-const INITIAL_TIMERS = {
-  pomodori: 1500000,
-  shortBreak: 180000,
-  longBreak: 900000,
-};
+// const INITIAL_TIMERS = {
+//   pomodori: 1500000,
+//   shortBreak: 180000,
+//   longBreak: 900000,
+// };
 
 // for quick test functionality (remove later)
-// const INITIAL_TIMERS = {
-//   pomodori: 3000,
-//   shortBreak: 2000,
-//   longBreak: 1000,
-// };
+const INITIAL_TIMERS = {
+  pomodori: 3000,
+  shortBreak: 2000,
+  longBreak: 1000,
+};
 
 const audio = new Audio(sound);
 
