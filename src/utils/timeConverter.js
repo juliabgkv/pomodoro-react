@@ -16,3 +16,8 @@ export function timeStringify(time) {
     
     return `${m}:${s}`;
 }
+
+export function msToTimeString(ms) {
+    const time = msToTime(ms);
+    return timeStringify(time);
+}
