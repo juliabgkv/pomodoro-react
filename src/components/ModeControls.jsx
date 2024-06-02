@@ -11,10 +11,10 @@ function ModeControls({ modes, currentMode, onModeChange }) {
         const label = idToLabel(mode);
 
         return (
-          <label htmlFor={mode} key={mode} className="mode-control">
+          <label htmlFor={`${mode}Mode`} key={mode} className="mode-control">
             <input
               type="radio"
-              id={mode}
+              id={`${mode}Mode`}
               value={mode}
               checked={mode === currentMode}
               onChange={handleOnChange}
