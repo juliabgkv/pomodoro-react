@@ -6,7 +6,7 @@
 }
 
 body {
-  margin: 0;
+  margin: 1rem;
   background-color: var(--primary-color);
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -39,7 +39,7 @@ code {
   background-color: var(--secondary-color);
 }
 
-.mode-control {
+.mode-control-label {
   padding: .6rem 1rem;
   border-radius: 19px;
   color: var(--light-color);
@@ -49,11 +49,16 @@ code {
   transition: .3s ease;
 }
 
-.mode-control input[type="radio"] {
+.mode-control-label {
+  display: flex;
+  align-items: center;
+}
+
+.mode-control-label input[type="radio"] {
   display: none;
 }
 
-.mode-control:has(input[type="radio"]:checked) {
+.mode-control-label:has(input[type="radio"]:checked) {
   background-color: var(--light-color);
   color: var(--secondary-color);
 }
@@ -61,7 +66,9 @@ code {
 /* -------- Progress bar ------- */
 
 .progress-bar-container {
+  max-width: 380px;
   padding: 1rem;
+  margin: auto;
   border-radius: 50%;
   box-shadow: 0px 0px 10px 5px var(--box-shadow-color);
 }
@@ -69,6 +76,9 @@ code {
 .time {
   color: var(--light-color);
   font-size: 7rem;
+  line-height: 7rem;
+  height: 7rem;
+  margin-bottom: 20px;
 }
 
 .message {
@@ -266,4 +276,26 @@ code {
 
 .save-btn:hover {
   background-color: var(--primary-color);
+}
+
+@media (max-width: 420px) {
+  .time {
+    font-size: 5rem;
+    line-height: 5rem;
+    height: 5rem;
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 420px) {
+  .time {
+    font-size: 5rem;
+  }
+}
+
+@media (max-width: 365px) {
+  .mode-control {
+    font-size: 12px;
+    padding: .4rem .8rem;
+  }
 }

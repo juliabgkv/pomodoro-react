@@ -16,7 +16,7 @@ function Timer({ currTimer, timer, mode }) {
     currTimer.timeLeft === 0 &&
     (mode === "shortBreak" || mode === "longBreak")
   ) {
-    content = <p className="message">Time to back to work!</p>;
+    content = <p className="message">Time to go back to work!</p>;
   } else if (currTimer.timeLeft === 0 && mode === "pomodori") {
     content = <p className="message">Take a break!</p>;
   }

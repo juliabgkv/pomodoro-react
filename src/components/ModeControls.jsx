@@ -11,7 +11,7 @@ function ModeControls({ modes, currentMode, onModeChange }) {
         const label = idToLabel(mode);
 
         return (
-          <label htmlFor={`${mode}Mode`} key={mode} className="mode-control">
+          <label htmlFor={`${mode}Mode`} key={mode} className="mode-control-label">
             <input
               type="radio"
               id={`${mode}Mode`}
